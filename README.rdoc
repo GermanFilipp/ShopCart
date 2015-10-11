@@ -1,0 +1,41 @@
+== ShopCart
+
+A simple shoppong cart for Rails
+
+==Getting started
+
+Add in your gemfile and bundle
+	gem 'shop_cart', git: 'https://github.com/GermanFilipp/ShopCart.git'
+
+After gem install, copy migrations and run db:migrate
+	rake shopping_cart:install:migrations
+   rake db:migrate
+
+Add current_customer method to ApplicationController.
+	def current_customer
+		@user
+	end
+
+== Installation
+
+Run into console
+   rails g shop_cart:install
+
+After installation define your class-name in 'app/config/initializers/shop_cart.rb'
+By default:
+	ShopCart.customer_class = "Customer"
+   ShopCart.product_class  = "Book"
+   ShopCart.address_class  = "Address"
+   ShopCart.delivery_class = "DeliveryMethod"
+   ShopCart.credit_class   = "CreditCard"
+
+Then define your routes in routes.rb
+By default:
+	mount ShopCart::Engine, at: '/cart', as: 'shop_cart'
+
+== Views
+
+Run into console
+  rails g shop_cart:view
+
+This project rocks and uses MIT-LICENSE.
