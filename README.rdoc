@@ -12,9 +12,7 @@ After gem install, copy migrations and run db:migrate
    rake db:migrate
 
 Add current_customer method to ApplicationController.
-	def current_customer
-		@user
-	end
+
 
 == Installation
 
